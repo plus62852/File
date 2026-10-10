@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy for Block Puzzle: Color Grid mobile application." />
+  <title>Privacy Policy - Block Puzzle: Color Grid</title>
+
+  <style>
+    /* ==========================================
+       Theme Colors & CSS Custom Properties
+       ========================================== */
+    :root {
+      --color-primary: #5D50A8;
+      --color-on-primary: #FFFFFF;
+      --color-primary-container: #E5DEFF;
+      --color-on-primary-container: #190262;
+
+      --color-secondary: #006A60;
+      --color-on-secondary: #FFFFFF;
+      --color-secondary-container: #73F8E7;
+      --color-on-secondary-container: #00201C;
+
+      --color-tertiary: #984700;
+      --color-tertiary-container: #FFFFDCC7;
+
+      --color-bg: #FBF8FF;
+      --color-surface: #FFFFFF;
+      --color-surface-variant: #E3E0F2;
+      --color-on-bg: #1B1B21;
+      --color-on-surface: #1B1B21;
+      --color-on-surface-variant: #464554;
+      --color-outline: #777585;
+
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 16px rgba(93, 80, 168, 0.08);
+
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-primary: #C6C0FF;
+        --color-on-primary: #2E1B76;
+        --color-primary-container: #45388E;
+        --color-on-primary-container: #E5DEFF;
+
+        --color-secondary: #53DBCB;
+        --color-on-secondary: #003732;
+        --color-secondary-container: #005048;
+        --color-on-secondary-container: #73F8E7;
+
+        --color-bg: #131318;
+        --color-surface: #1C1B22;
+        --color-surface-variant: #2B2A38;
+        --color-on-bg: #E4E1EC;
+        --color-on-surface: #E4E1EC;
+        --color-on-surface-variant: #C7C4D6;
+        --color-outline: #918F9F;
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    [data-theme="dark"] {
+      --color-primary: #C6C0FF;
+      --color-on-primary: #2E1B76;
+      --color-primary-container: #45388E;
+      --color-on-primary-container: #E5DEFF;
+
+      --color-secondary: #53DBCB;
+      --color-on-secondary: #003732;
+      --color-secondary-container: #005048;
+      --color-on-secondary-container: #73F8E7;
+
+      --color-bg: #131318;
+      --color-surface: #1C1B22;
+      --color-surface-variant: #2B2A38;
+      --color-on-bg: #E4E1EC;
+      --color-on-surface: #E4E1EC;
+      --color-on-surface-variant: #C7C4D6;
+      --color-outline: #918F9F;
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="light"] {
+      --color-primary: #5D50A8;
+      --color-on-primary: #FFFFFF;
+      --color-primary-container: #E5DEFF;
+      --color-on-primary-container: #190262;
+
+      --color-secondary: #006A60;
+      --color-on-secondary: #FFFFFF;
+      --color-secondary-container: #73F8E7;
+      --color-on-secondary-container: #00201C;
+
+      --color-bg: #FBF8FF;
+      --color-surface: #FFFFFF;
+      --color-surface-variant: #E3E0F2;
+      --color-on-bg: #1B1B21;
+      --color-on-surface: #1B1B21;
+      --color-on-surface-variant: #464554;
+      --color-outline: #777585;
+      --shadow-md: 0 4px 16px rgba(93, 80, 168, 0.08);
+    }
+
+    /* ==========================================
+       Global & Layout Styles
+       ========================================== */
+    html {
+      scroll-behavior: smooth;
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-family);
+      background-color: var(--color-bg);
+      color: var(--color-on-bg);
+      line-height: 1.6;
+      font-size: 16px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      color: #FFFFFF;
+      padding: 48px 24px;
+      text-align: center;
+      position: relative;
+      box-shadow: var(--shadow-md);
+    }
+
+    .header-badge {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    header h1 {
+      margin: 0 0 8px 0;
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 1.05rem;
+      opacity: 0.9;
+    }
+
+    .top-controls {
+      position: absolute;
+      top: 16px;
+      right: 24px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .icon-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #FFFFFF;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .icon-btn:hover {
+      background: rgba(255, 255, 255, 0.35);
+      transform: scale(1.05);
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 24px 64px 24px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 32px;
+    }
+
+    /* ==========================================
+       Navigation / Table of Contents
+       ========================================== */
+    .toc-card {
+      position: sticky;
+      top: 24px;
+      background-color: var(--color-surface);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-surface-variant);
+      max-height: calc(100vh - 48px);
+      overflow-y: auto;
+    }
+
+    .toc-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-top: 0;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--color-primary-container);
+    }
+
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc-list li {
+      margin-bottom: 8px;
+    }
+
+    .toc-list a {
+      color: var(--color-on-surface-variant);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      display: block;
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s ease;
+    }
+
+    .toc-list a:hover, .toc-list a.active {
+      background-color: var(--color-primary-container);
+      color: var(--color-on-primary-container);
+      font-weight: 600;
+    }
+
+    /* ==========================================
+       Content & Section Styling
+       ========================================== */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .section-card {
+      background-color: var(--color-surface);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-surface-variant);
+      transition: border-color 0.2s ease;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--color-surface-variant);
+    }
+
+    .section-header h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-number {
+      background-color: var(--color-primary-container);
+      color: var(--color-on-primary-container);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    p, ul, ol {
+      color: var(--color-on-surface);
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    p:last-child, ul:last-child, ol:last-child {
+      margin-bottom: 0;
+    }
+
+    ul, ol {
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .highlight-box {
+      background-color: var(--color-surface-variant);
+      border-left: 4px solid var(--color-secondary);
+      padding: 16px 20px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 16px 0;
+    }
+
+    .highlight-box h4 {
+      margin: 0 0 6px 0;
+      color: var(--color-secondary);
+      font-size: 1rem;
+    }
+
+    .step-list {
+      list-style: none;
+      padding-left: 0;
+      counter-reset: step-counter;
+    }
+
+    .step-list li {
+      counter-increment: step-counter;
+      position: relative;
+      padding-left: 36px;
+      margin-bottom: 12px;
+    }
+
+    .step-list li::before {
+      content: counter(step-counter);
+      position: absolute;
+      left: 0;
+      top: 2px;
+      background-color: var(--color-secondary-container);
+      color: var(--color-on-secondary-container);
+      font-weight: 700;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--color-primary);
+      color: var(--color-on-primary);
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .action-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: var(--color-secondary);
+      color: var(--color-on-secondary);
+    }
+
+    /* ==========================================
+       Toast & Feedback Notifications
+       ========================================== */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background-color: var(--color-on-surface);
+      color: var(--color-surface);
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-weight: 500;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      transform: translateY(100%);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--color-on-surface-variant);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--color-surface-variant);
+      margin-top: 48px;
+    }
+
+    /* ==========================================
+       Responsive & Print Rules
+       ========================================== */
+    @media (max-width: 820px) {
+      .container {
+        grid-template-columns: 1fr;
+        padding: 20px 16px;
+      }
+
+      .toc-card {
+        position: static;
+        max-height: none;
+      }
+
+      .section-card {
+        padding: 20px 20px;
+      }
+
+      header {
+        padding: 36px 16px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+    }
+
+    @media print {
+      body {
+        background-color: #FFFFFF !important;
+        color: #000000 !important;
+        font-size: 12pt;
+      }
+
+      header {
+        background: none !important;
+        color: #000000 !important;
+        border-bottom: 2px solid #000000;
+        padding: 12pt 0;
+      }
+
+      .top-controls, .toc-card, .toast, .action-btn {
+        display: none !important;
+      }
+
+      .container {
+        display: block;
+        padding: 0;
+        max-width: 100%;
+      }
+
+      .section-card {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 12pt 0 !important;
+        page-break-inside: avoid;
+      }
+
+      .section-header h2 {
+        color: #000000 !important;
+      }
+
+      .section-number {
+        border: 1px solid #000000;
+        background: none !important;
+        color: #000000 !important;
+      }
+
+      a {
+        color: #000000 !important;
+        text-decoration: underline;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="top-controls">
+      <button class="icon-btn" id="themeToggle" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">🌙</button>
+      <button class="icon-btn" onclick="window.print()" title="Print Privacy Policy" aria-label="Print Policy">🖨️</button>
+    </div>
+    <span class="header-badge">Legal & Privacy</span>
+    <h1>Block Puzzle: Color Grid</h1>
+    <p>Privacy Policy • Effective Date: October 10, 2026</p>
+  </header>
+
+  <div class="container">
+    <!-- Table of Contents Sidebar -->
+    <nav class="toc-card" aria-label="Table of Contents">
+      <h3 class="toc-title">Table of Contents</h3>
+      <ul class="toc-list" id="tocList">
+        <li><a href="#section-1">1. Introduction</a></li>
+        <li><a href="#section-2">2. Information We Collect</a></li>
+        <li><a href="#section-3">3. Third-Party Services</a></li>
+        <li><a href="#section-4">4. AdMob & Personalized Ads</a></li>
+        <li><a href="#section-5">5. Children's Privacy</a></li>
+        <li><a href="#section-6">6. Security & Storage</a></li>
+        <li><a href="#section-7">7. Policy Changes</a></li>
+        <li><a href="#section-8">8. Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Policy Sections -->
+    <main class="main-content">
+
+      <!-- Section 1 -->
+      <section id="section-1" class="section-card">
+        <div class="section-header">
+          <h2><span class="section-number">1</span> Introduction & Commitment</h2>
+        </div>
+        <p>
+          Welcome to <strong>Block Puzzle: Color Grid</strong> (also referred to as "Block Puzzle", "we", "us", or "our").
+          We respect your privacy and are committed to protecting any data associated with your use of our mobile application.
+        </p>
+        <p>
+          This Privacy Policy outlines how data is handled when you download, install, and play <strong>Block Puzzle: Color Grid</strong>
+          on Android devices. Our design philosophy prioritizes user privacy through minimal data collection and local-first architecture.
+        </p>
+        <div class="highlight-box">
+          <h4>Privacy Summary</h4>
+          <p>We do not require account creation, nor do we collect or store your personal identity information on external servers. Game progress and settings remain local on your device.</p>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="section-2" class="section-card">
+        <div class="section-header">
+          <h2><span class="section-number">2</span> Information We Collect & Local Storage</h2>
+        </div>
+        <h3>Personal Information</h3>
+        <p>
+          We do <strong>not</strong> collect, harvest, or request any Personally Identifiable Information (PII) such as your real name,
+          email address, phone number, contacts, or precise physical location. You can enjoy the full gameplay experience completely anonymously.
+        </p>
+
+        <h3>Local Device Data (DataStore Storage)</h3>
+        <p>
+          To save your game progress and customize your gameplay experience, <strong>Block Puzzle: Color Grid</strong> saves game data locally on your device
+          using Android's Jetpack DataStore / SharedPreferences framework. This local data includes:
+        </p>
+        <ul>
+          <li><strong>Game State & Score:</strong> High scores, current game grid layout, active score streaks, and combo statistics.</li>
+          <li><strong>User Preferences:</strong> Sound effect toggles, background music volume, and theme selections (Light/Dark mode).</li>
+          <li><strong>Achievement & Progress Data:</strong> Unlocked color themes, daily challenge completion status, and gameplay statistics.</li>
+        </ul>
+        <p>
+          This data remains sandboxed within your device's isolated local app storage and is never uploaded to any external servers managed by us.
+          Clearing application data or uninstalling the app will permanently erase this local data.
+        </p>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="section-3" class="section-card">
+        <div class="section-header">
+          <h2><span class="section-number">3</span> Third-Party Services & Advertising</h2>
+        </div>
+        <p>
+          To keep <strong>Block Puzzle: Color Grid</strong> free to play, we integrate trusted third-party SDKs that may process non-personal diagnostic data
+          and technical device identifiers.
+        </p>
+
+        <h3>Integrated Third-Party SDKs</h3>
+        <ul>
+          <li>
+            <strong>Google AdMob:</strong> Used to display advertisements (banner ads, interstitial ads, and rewarded video ads). AdMob may use device identifiers
+            such as the Google Advertising ID (GAID), IP address, coarse location data, and ad interaction metrics to serve ads.
+          </li>
+          <li>
+            <strong>Google Play Services:</strong> Essential Android operational services, app integrity verification, and device compatibility support.
+          </li>
+        </ul>
+
+        <h3>Google Advertising ID (GAID)</h3>
+        <p>
+          The Google Advertising ID is a resettable, non-permanent device identifier provided by the Android operating system. AdMob uses this identifier to
+          deliver personalized advertisements and prevent fraud.
+        </p>
+
+        <p>For detailed information regarding how Google uses data, please review:</p>
+        <p>
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> |
+          <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from sites or apps that use our services</a>
+        </p>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="section-4" class="section-card">
+        <div class="section-header">
+          <h2><span class="section-number">4</span> AdMob & Personalized Ads Opt-Out</h2>
+        </div>
+        <p>
+          You have complete control over whether advertisers use your Google Advertising ID to show personalized interest-based ads.
+          You can reset or opt out of personalized advertising at any time directly through your Android system settings.
+        </p>
+
+        <div class="highlight-box">
+          <h4>How to Opt Out / Reset Advertising ID on Android</h4>
+          <ol class="step-list">
+            <li>Open your Android device's <strong>Settings</strong> app.</li>
+            <li>Scroll down and tap <strong>Google</strong> (or <strong>Google Services</strong>).</li>
+            <li>Select <strong>Ads</strong>.</li>
+            <li>
+              Tap <strong>Reset advertising ID</strong> (to generate a fresh random ID) OR tap <strong>Delete advertising ID</strong>
+              (or toggle <em>Opt out of Ads Personalization</em> on older Android versions).
+            </li>
+          </ol>
+        </div>
+        <p>
+          Note: Opting out of ad personalization does not remove ads entirely; rather, ads served will be non-personalized and contextual.
+        </p>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="section-5" class="section-card">
+        <div class="section-header">
+          <h2><span class="section-number">5</span> Children's Privacy (COPPA & GDPR)</h2>
+        </div>
+        <p>
+          <strong>Block Puzzle: Color Grid</strong> is built as a general audience puzzle game enjoyed by players of all ages.
+        </p>
+        <h3>COPPA (United States)</h3>
+        <p>
+          We comply with the Children's Online Privacy Protection Act (COPPA). We do not knowingly collect personal information from children under the age of 13.
+        </p>
+        <h3>GDPR & EEA/UK Protection</h3>
+        <p>
+          In compliance with the General Data Protection Regulation (GDPR), users located in the European Economic Area (EEA) and the United Kingdom (UK) under 16 years
+          of age will receive contextual, non-personalized advertising unless explicit, verifiable parental consent is granted.
+        </p>
+        <p>
+          If you are a parent or legal guardian and believe that a child under 13 (or under 16 in applicable jurisdictions) has inadvertently provided us with personal data,
+          please contact us immediately so that we can take appropriate measures to delete any such data.
+        </p>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="section-6" class="section-card">
+        <div class="section-header">
+          <h2><span class="section-number">6</span> Security & Data Storage</h2>
+        </div>
+        <p>
+          We prioritize the security of your device data. Since <strong>Block Puzzle: Color Grid</strong> relies on local storage rather than cloud-hosted user databases:
+        </p>
+        <ul>
+          <li><strong>Android Application Sandboxing:</strong> Your saved game progress and preferences are secured by Android's strict application isolation protocols.</li>
+          <li><strong>Encrypted Communications:</strong> Any diagnostic or advertising request made by third-party services (such as Google AdMob) is conducted over secure, encrypted HTTPS/TLS channels.</li>
+          <li><strong>No Remote Databases:</strong> We do not operate external web servers storing personal user profiles, eliminating risks related to central data leaks.</li>
+        </ul>
+      </section>
+
+      <!-- Section 7 -->
+      <section id="section-7" class="section-card">
+        <div class="section-header">
+          <h2><span class="section-number">7</span> Changes to This Privacy Policy</h2>
+        </div>
+        <p>
+          We may periodically update this Privacy Policy to reflect changes in our practices, Android platform requirements, or applicable laws.
+        </p>
+        <p>
+          When updates are made, the "Effective Date" at the top of this policy will be revised accordingly. We encourage you to review this Privacy Policy
+          regularly to stay informed about our commitment to privacy. Continued use of <strong>Block Puzzle: Color Grid</strong> after any modifications constitutes acceptance
+          of the updated terms.
+        </p>
+      </section>
+
+      <!-- Section 8 -->
+      <section id="section-8" class="section-card">
+        <div class="section-header">
+          <h2><span class="section-number">8</span> Contact Us & Developer Support</h2>
+        </div>
+        <p>
+          If you have any questions, suggestions, or concerns regarding this Privacy Policy or data protection in <strong>Block Puzzle: Color Grid</strong>,
+          please feel free to reach out to us:
+        </p>
+        <div class="highlight-box">
+          <p><strong>App Title:</strong> Block Puzzle: Color Grid</p>
+          <p><strong>Developer Email:</strong> dacorpan@gmail.com</p>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Block Puzzle: Color Grid. All rights reserved.</p>
+  </footer>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast">Link copied to clipboard!</div>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // Theme Switcher Logic
+    const themeToggleBtn = document.getElementById('themeToggle');
+    let currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      themeToggleBtn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      localStorage.setItem('theme', theme);
+    }
+
+    applyTheme(currentTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+      currentTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(currentTheme);
+    });
+
+    // Toast Notification helper
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    // Copy Text to Clipboard
+    function copyText(text, successMsg) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(successMsg);
+        }).catch(() => {
+          fallbackCopyText(text, successMsg);
+        });
+      } else {
+        fallbackCopyText(text, successMsg);
+      }
+    }
+
+    function fallbackCopyText(text, successMsg) {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      textArea.style.position = "fixed";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg);
+      } catch (err) {
+        showToast('Unable to copy text');
+      }
+      document.body.removeChild(textArea);
+    }
+
+    // Active TOC scroll spy
+    const sections = document.querySelectorAll('.section-card');
+    const tocLinks = document.querySelectorAll('.toc-list a');
+
+    window.addEventListener('scroll', () => {
+      let currentSection = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      tocLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentSection) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
